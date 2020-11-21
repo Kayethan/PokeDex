@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">PokeDex</string>
     <string name="empty">Empty</string>
+
+    <!--  App menu  -->
+    <string name="filter_types">Filter using types</string>
+    <string name="reset_list">Reset list</string>
+
+    <!-- Pokemon Entry -->
+    <string name="pokemon_icon_desc">PokemonIconDesc</string>
 </resources>

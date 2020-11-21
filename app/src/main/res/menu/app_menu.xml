@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_favorites"
+        android:checkable="true"
+        android:checked="false"
+        android:icon="@drawable/ic_favorite_unchecked"
+        android:title="@string/empty"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_filter_types"
+        android:title="@string/filter_types" />
+    <item
+        android:id="@+id/action_reset_list"
+        android:title="@string/reset_list" />
+</menu>
