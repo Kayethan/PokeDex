@@ -3,29 +3,59 @@ package com.kayethan.pokedex.pokelist
 import android.content.Context
 import android.graphics.drawable.GradientDrawable
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.kayethan.pokedex.R
+import kotlinx.android.synthetic.main.pokemon_entry.view.*
 
-class PokemonAdapter(private val entriesDataset: ArrayList<PokemonEntry>) : RecyclerView.Adapter<PokemonAdapter.PokemonViewHolder>() {
+class PokemonAdapter(private val entriesDataset: ArrayList<PokemonEntry>, private val listener: OnItemClickListener) : RecyclerView.Adapter<PokemonAdapter.PokemonViewHolder>() {
     companion object {
         lateinit var context: Context
         const val CORNER_RADIUS: Float = 8.0f
         const val STROKE_WIDTH: Int = 4
     }
 
-    class PokemonViewHolder(entryView: View) : RecyclerView.ViewHolder(entryView) {
+    interface ClickListener {
+        fun onItemClick(position: Int, view: View)
+    }
+
+    inner class PokemonViewHolder(entryView: View) : RecyclerView.ViewHolder(entryView), View.OnClickListener {
         val nameTextView: TextView = entryView.findViewById(R.id.nameTV)
         val iconImageView: ImageView = entryView.findViewById(R.id.iconIV)
         val favoriteImageButton: ImageButton = entryView.findViewById(R.id.favoriteBT)
         val type1TextView: TextView = entryView.findViewById(R.id.type1TV)
         val type2TextView: TextView = entryView.findViewById(R.id.type2TV)
         val numberTextView: TextView = entryView.findViewById(R.id.numberTV)
+
+        lateinit var pokemonEntry: PokemonEntry
+
+        init {
+            itemView.setOnClickListener(this)
+            entryView.favoriteBT.setOnClickListener {
+                onFavoriteClick(this.itemView)
+            }
+        }
+
+        override fun onClick(v: View?) {
+            val position: Int = adapterPosition
+            if (position != RecyclerView.NO_POSITION) {
+                listener.onItemClick(adapterPosition, pokemonEntry)
+            }
+        }
+
+        private fun onFavoriteClick(v: View?) {
+            val position: Int = adapterPosition
+            if (position != RecyclerView.NO_POSITION) {
+                listener.onFavoriteClick(adapterPosition, pokemonEntry)
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PokemonViewHolder {
@@ -35,6 +65,7 @@ class PokemonAdapter(private val entriesDataset: ArrayList<PokemonEntry>) : Recy
 
     override fun onBindViewHolder(holder: PokemonViewHolder, position: Int) {
         val entry: PokemonEntry = entriesDataset[position]
+        holder.pokemonEntry = entry
 
         holder.nameTextView.text = entry.pokemonName
         holder.iconImageView.setImageResource(entry.icon)
@@ -70,5 +101,10 @@ class PokemonAdapter(private val entriesDataset: ArrayList<PokemonEntry>) : Recy
     fun removeAt(position: Int) {
         entriesDataset.removeAt(position)
         notifyItemRemoved(position)
+    }
+
+    interface OnItemClickListener {
+        fun onItemClick(position: Int, pokemonEntry: PokemonEntry)
+        fun onFavoriteClick(position: Int, pokemonEntry: PokemonEntry)
     }
 }
