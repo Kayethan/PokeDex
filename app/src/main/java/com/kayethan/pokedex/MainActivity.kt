@@ -1,5 +1,6 @@
 package com.kayethan.pokedex
 
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
@@ -156,6 +157,11 @@ class MainActivity : AppCompatActivity(), PokemonAdapter.OnItemClickListener, Fi
 
     override fun onItemClick(position: Int, pokemonEntry: PokemonEntry) {
         Log.i("test", "Item clicked: $position, name: ${pokemonEntry.pokemonName}")
+
+        val intent = Intent(this, DetailsActivity::class.java).apply {
+            putExtra(PokemonDatabase.POKEMON_KEY, pokemonEntry.pokemonNumber)
+        }
+        startActivityForResult(intent, 0)
     }
 
     override fun onFavoriteClick(position: Int, pokemonEntry: PokemonEntry) {
