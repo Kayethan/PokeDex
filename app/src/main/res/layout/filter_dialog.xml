@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingVertical="4dp">
+
+                <TextView
+                    android:id="@+id/normalTV"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:clickable="true"
+                    android:forceDarkAllowed="false"
+                    android:gravity="center"
+                    android:text="@string/type_normal"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/fireTV"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:clickable="true"
+                    android:forceDarkAllowed="false"
+                    android:gravity="center"
+                    android:text="@string/type_fire"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/fightingTV"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:clickable="true"
+                    android:forceDarkAllowed="false"
+                    android:gravity="center"
+                    android:text="@string/type_fighting"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="#FFFFFF" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingVertical="4dp">
+
+                <TextView
+                    android:id="@+id/waterTV"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:clickable="true"
+                    android:forceDarkAllowed="false"
+                    android:gravity="center"
+                    android:text="@string/type_water"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/flyingTV"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:clickable="true"
+                    android:forceDarkAllowed="false"
+                    android:gravity="center"
+                    android:text="@string/type_flying"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/grassTV"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:clickable="true"
+                    android:forceDarkAllowed="false"
+                    android:gravity="center"
+                    android:text="@string/type_grass"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="#FFFFFF" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingVertical="4dp">
+
+                <TextView
+                    android:id="@+id/poisonTV"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:clickable="true"
+                    android:forceDarkAllowed="false"
+                    android:gravity="center"
+                    android:text="@string/type_poison"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/electricTV"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:clickable="true"
+                    android:forceDarkAllowed="false"
+                    android:gravity="center"
+                    android:text="@string/type_electric"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/groundTV"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:clickable="true"
+                    android:forceDarkAllowed="false"
+                    android:gravity="center"
+                    android:text="@string/type_ground"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="#FFFFFF" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingVertical="4dp">
+
+                <TextView
+                    android:id="@+id/psychicTV"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:clickable="true"
+                    android:forceDarkAllowed="false"
+                    android:gravity="center"
+                    android:text="@string/type_psychic"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/rockTV"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:clickable="true"
+                    android:forceDarkAllowed="false"
+                    android:gravity="center"
+                    android:text="@string/type_rock"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/iceTV"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:clickable="true"
+                    android:forceDarkAllowed="false"
+                    android:gravity="center"
+                    android:text="@string/type_ice"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="#FFFFFF" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingVertical="4dp">
+
+                <TextView
+                    android:id="@+id/bugTV"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:clickable="true"
+                    android:forceDarkAllowed="false"
+                    android:gravity="center"
+                    android:text="@string/type_bug"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/dragonTV"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:clickable="true"
+                    android:forceDarkAllowed="false"
+                    android:gravity="center"
+                    android:text="@string/type_dragon"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/ghostTV"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:clickable="true"
+                    android:forceDarkAllowed="false"
+                    android:gravity="center"
+                    android:text="@string/type_ghost"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="#FFFFFF" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingVertical="4dp">
+
+                <TextView
+                    android:id="@+id/darkTV"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:clickable="true"
+                    android:forceDarkAllowed="false"
+                    android:gravity="center"
+                    android:text="@string/type_dark"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/steelTV"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:clickable="true"
+                    android:forceDarkAllowed="false"
+                    android:gravity="center"
+                    android:text="@string/type_steel"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/fairyTV"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:clickable="true"
+                    android:forceDarkAllowed="false"
+                    android:gravity="center"
+                    android:text="@string/type_fairy"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="#FFFFFF" />
+            </TableRow>
+
+        </TableLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,6 +10,6 @@ data class PokeData(
         val icon: Int
 ) {
     fun toPokemonEntry(): PokemonEntry {
-        return PokemonEntry(icon, name, number, type1, type2)
+        return PokemonEntry(icon, name, number, type1, type2, false)
     }
 }

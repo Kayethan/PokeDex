@@ -5,6 +5,11 @@ import androidx.core.content.ContextCompat.getColor
 import com.kayethan.pokedex.R
 
 enum class PokeType {
+    None {
+        override fun getContentColor(context: Context): Int { return getColor(context, R.color.type_normal_content) }
+        override fun getBorderColor(context: Context): Int { return getColor(context, R.color.type_normal_border) }
+        override fun getTypeName(context: Context): String { return context.getString(R.string.type_none) }
+    },
     Normal {
         override fun getContentColor(context: Context): Int { return getColor(context, R.color.type_normal_content) }
         override fun getBorderColor(context: Context): Int { return getColor(context, R.color.type_normal_border) }

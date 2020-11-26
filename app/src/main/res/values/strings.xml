@@ -3,13 +3,19 @@
     <string name="empty">Empty</string>
 
     <!--  App menu  -->
-    <string name="filter_types">Filter using types</string>
+    <string name="filter_types">Set type filter</string>
     <string name="reset_list">Reset list</string>
 
     <!-- Pokemon Entry -->
     <string name="pokemon_icon_desc">PokemonIconDesc</string>
 
+    <!-- Filter dialog -->
+    <string name="filter_title">Filter using type</string>
+    <string name="filter_cancel">Cancel</string>
+    <string name="filter_reset">Reset</string>
+
     <!-- Pokemon types names -->
+    <string name="type_none">None</string>
     <string name="type_normal">Normal</string>
     <string name="type_fire">Fire</string>
     <string name="type_fighting">Fighting</string>

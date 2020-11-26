@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.kayethan.pokedex.R
 import kotlinx.android.synthetic.main.pokemon_entry.view.*
 
-class PokemonAdapter(private val entriesDataset: ArrayList<PokemonEntry>, private val listener: OnItemClickListener) : RecyclerView.Adapter<PokemonAdapter.PokemonViewHolder>() {
+class PokemonAdapter(var entriesDataset: ArrayList<PokemonEntry>, private val listener: OnItemClickListener) : RecyclerView.Adapter<PokemonAdapter.PokemonViewHolder>() {
     companion object {
         lateinit var context: Context
         const val CORNER_RADIUS: Float = 8.0f
@@ -67,9 +67,14 @@ class PokemonAdapter(private val entriesDataset: ArrayList<PokemonEntry>, privat
         val entry: PokemonEntry = entriesDataset[position]
         holder.pokemonEntry = entry
 
+        if (entry.favorite) {
+            holder.favoriteImageButton.setImageDrawable(context.getDrawable(R.drawable.ic_favorite_checked))
+        } else {
+            holder.favoriteImageButton.setImageDrawable(context.getDrawable(R.drawable.ic_favorite_unchecked))
+        }
+
         holder.nameTextView.text = entry.pokemonName
         holder.iconImageView.setImageResource(entry.icon)
-        // holder.favoriteImageButton
 
         holder.type1TextView.text = entry.type1.getTypeName(context).toUpperCase()
         val gd1 = GradientDrawable()
@@ -79,6 +84,7 @@ class PokemonAdapter(private val entriesDataset: ArrayList<PokemonEntry>, privat
         holder.type1TextView.background = gd1
 
         if (entry.type2 != null) {
+            holder.type2TextView.isVisible = true
             holder.type2TextView.text = entry.type2!!.getTypeName(context).toUpperCase()
             val gd2 = GradientDrawable()
             gd2.setColor(entry.type2!!.getContentColor(context))
