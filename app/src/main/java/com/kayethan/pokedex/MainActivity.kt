@@ -64,7 +64,6 @@ class MainActivity : AppCompatActivity(), PokemonAdapter.OnItemClickListener, Fi
         val swipeHandler = object : SwipeToDeleteCallback(this@MainActivity) {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val adapter = recyclerView.adapter as PokemonAdapter
-                TODO("TEST")
                 // val viewHolder: PokemonAdapter.PokemonViewHolder = viewHolder as PokemonAdapter.PokemonViewHolder
                 deletedNumbers.add(adapter.entriesDataset[viewHolder.adapterPosition].pokemonNumber)
                 adapter.removeAt(viewHolder.adapterPosition)

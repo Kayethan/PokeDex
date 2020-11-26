@@ -27,8 +27,8 @@
     <color name="type_flying_content">#A890F0</color>
     <color name="type_flying_border">#6D5E9C</color>
 
-    <color name="type_grass_content">#A7DB8D</color>
-    <color name="type_grass_border">#78C850</color>
+    <color name="type_grass_content">#78C850</color>
+    <color name="type_grass_border">#4B7E32</color>
 
     <color name="type_poison_content">#A040A0</color>
     <color name="type_poison_border">#682A68</color>
