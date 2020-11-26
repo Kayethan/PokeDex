@@ -159,8 +159,6 @@ class MainActivity : AppCompatActivity(), PokemonAdapter.OnItemClickListener, Fi
     }
 
     override fun onFavoriteClick(position: Int, pokemonEntry: PokemonEntry) {
-        Log.i("test", "Favorite clicked: $position, name: ${pokemonEntry.pokemonNumber}")
-
         if (favoriteNumbers.contains(pokemonEntry.pokemonNumber)) {
             favoriteNumbers.remove(pokemonEntry.pokemonNumber)
             pokemonEntry.favorite = false
