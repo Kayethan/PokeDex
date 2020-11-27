@@ -54,7 +54,7 @@ class DetailsActivity : AppCompatActivity() {
         val pagerAdapter = DetailsAdapter(this, pokemonData)
         viewPager.adapter = pagerAdapter
 
-        viewPager.setPageTransformer(ZoomOutPageTransformer())
+        // viewPager.setPageTransformer(ZoomOutPageTransformer())
 
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = tabNames[position]
