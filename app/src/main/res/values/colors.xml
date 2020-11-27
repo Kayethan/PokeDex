@@ -7,9 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="red_100">#FFCDD2</color>
     <color name="red_500">#F44336</color>
     <color name="red_700">#FFD32F2F</color>
     <color name="red_900">#B71C1C</color>
+
+    <color name="separator">#444444</color>
 
     <!-- Types colors -->
     <color name="type_normal_content">#A8A878</color>

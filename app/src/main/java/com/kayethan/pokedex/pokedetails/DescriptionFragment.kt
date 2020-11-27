@@ -1,60 +1,71 @@
 package com.kayethan.pokedex.pokedetails
 
+import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
+import com.kayethan.pokedex.DetailsActivity
 import com.kayethan.pokedex.R
+import com.kayethan.pokedex.databinding.FragmentDescriptionBinding
+import com.kayethan.pokedex.pokedata.PokemonData
+import com.kayethan.pokedex.pokelist.PokemonAdapter
+import kotlinx.android.synthetic.main.fragment_description.*
+import java.util.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [DescriptionFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class DescriptionFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var binding: FragmentDescriptionBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_description, container, false)
+    inflater: LayoutInflater,
+    container: ViewGroup?,
+    savedInstanceState: Bundle?
+    ): View {
+        binding = FragmentDescriptionBinding.inflate(inflater)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment DescriptionFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            DescriptionFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding = FragmentDescriptionBinding.bind(view)
+
+        iconDetailIV.setImageResource(DetailsActivity.pokemonData.basicPokemonData.icon)
+        detailsNameTV.text = DetailsActivity.pokemonData.basicPokemonData.name
+
+        val type1 = DetailsActivity.pokemonData.basicPokemonData.type1
+
+        detailsType1TV.text = type1.getTypeName(PokemonAdapter.context).toUpperCase()
+        val gd1 = GradientDrawable()
+        gd1.setColor(type1.getContentColor(PokemonAdapter.context))
+        gd1.cornerRadius = PokemonAdapter.CORNER_RADIUS
+        gd1.setStroke(PokemonAdapter.STROKE_WIDTH, type1.getBorderColor(PokemonAdapter.context))
+        detailsType1TV.background = gd1
+
+        val type2 = DetailsActivity.pokemonData.basicPokemonData.type2
+
+        if (type2 != null) {
+            detailsType2TV.isVisible = true
+            detailsType2TV.text = type2.getTypeName(PokemonAdapter.context).toUpperCase(Locale.ROOT)
+            val gd2 = GradientDrawable()
+            gd2.setColor(type2.getContentColor(PokemonAdapter.context))
+            gd2.cornerRadius = PokemonAdapter.CORNER_RADIUS
+            gd2.setStroke(PokemonAdapter.STROKE_WIDTH, type2.getBorderColor(PokemonAdapter.context))
+            detailsType2TV.background = gd2
+        }
+        else
+        {
+            detailsType2TV.isVisible = false
+        }
+
+        detailsHeightTV.text = getString(R.string.height_kg, DetailsActivity.pokemonData.detailsPokemonData.height)
+        detailsWeightTV.text = getString(R.string.weight_m, DetailsActivity.pokemonData.detailsPokemonData.weight)
+
+        detailsPokeTypeTV.text = getString(DetailsActivity.pokemonData.detailsPokemonData.pokemonType)
+        detailsLevelingRateTV.text = DetailsActivity.pokemonData.detailsPokemonData.levelingRate.getString(PokemonAdapter.context)
+
+        detailsDescTV.text = getString(DetailsActivity.pokemonData.detailsPokemonData.descriptionText)
     }
 }

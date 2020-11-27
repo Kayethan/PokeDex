@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity(), PokemonAdapter.OnItemClickListener, Fi
         val entries = ArrayList<PokemonEntry>()
 
         for (pokemon in PokemonDatabase.getPokemonList()) {
-            val pokemonEntry = pokemon.toPokemonEntry()
+            val pokemonEntry = pokemon.basicPokemonData.toPokemonEntry()
             pokemonEntry.favorite = favoriteNumbers.contains(pokemonEntry.pokemonNumber)
             entries.add(pokemonEntry)
         }
@@ -223,7 +223,7 @@ class MainActivity : AppCompatActivity(), PokemonAdapter.OnItemClickListener, Fi
     private fun filterEntriesList(showOnlyFavorites: Boolean, showOnlyType: PokeType) {
         val entries = ArrayList<PokemonEntry>()
         for (pokemon in PokemonDatabase.getPokemonList()) {
-            val pokemonEntry = pokemon.toPokemonEntry()
+            val pokemonEntry = pokemon.basicPokemonData.toPokemonEntry()
             if (pokemonEntry.pokemonNumber in favoriteNumbers) {
                 pokemonEntry.favorite = true
             }

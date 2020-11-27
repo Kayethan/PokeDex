@@ -39,4 +39,29 @@
 
     <!-- Details -->
     <string name="detailsTitle">Details</string>
+    <string name="description">Description</string>
+    <string name="gallery">Gallery</string>
+    <string name="locations">Locations</string>
+    <string name="height">Height</string>
+    <string name="weight_m">%.1f m</string>
+    <string name="weight">Weight</string>
+    <string name="height_kg">%.1f kg</string>
+    <string name="poke_type">Category:</string>
+    <string name="leveling_rate">Leveling rate:</string>
+    <string name="location_lvl_range">%d - %d</string>
+    <string name="location_name">Location name</string>
+    <string name="location_lvl">Level</string>
+
+    <!-- LevelingRates -->
+    <string name="mediumSlow">Medium Slow</string>
+
+    <!-- Routes -->
+    <string name="professorOak">Starter Pokémon from Professor Oak in Pallet Town</string>
+    <string name="route001">Route 1</string>
+
+    <!-- PokemonTypes -->
+    <string name="seed_pokemon">Seed Pokémon</string>
+
+    <!-- PokemonDesc -->
+    <string name="desc_001">Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun\'s rays, the seed grows progressively larger.</string>
 </resources>
