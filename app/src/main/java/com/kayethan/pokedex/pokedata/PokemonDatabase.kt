@@ -21,6 +21,16 @@ object PokemonDatabase {
                 R.string.desc_001,
                 LevelingRate.MediumSlow
             ),
+            GalleryPokemonData(
+                listOf<Int>(
+                    R.drawable.temp_1,
+                    R.drawable.temp_2,
+                    R.drawable.temp_3,
+                    R.drawable.temp_4,
+                    R.drawable.temp_5,
+                    R.drawable.temp_6,
+                )
+            ),
             listOf<GameLocation>(
                     GameLocation(Route.ProfessorOak, IntRange(5, 5)),
                     GameLocation(Route.Route001, IntRange(2, 5))

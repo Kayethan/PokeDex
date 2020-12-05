@@ -9,14 +9,20 @@ import com.kayethan.pokedex.pokedata.PokemonData
 
 class DetailsAdapter(fa: FragmentActivity, val pokemonData: PokemonData) : FragmentStateAdapter(fa) {
     override fun getItemCount(): Int {
-        return 2
+        return 3
     }
 
     override fun createFragment(position: Int): Fragment {
-        return if (position == 0) {
-            DescriptionFragment()
-        } else {
-            LocationsFragment()
+        return when (position) {
+            0 -> {
+                DescriptionFragment()
+            }
+            1 -> {
+                LocationsFragment()
+            }
+            else -> {
+                GalleryFragment()
+            }
         }
     }
 }
