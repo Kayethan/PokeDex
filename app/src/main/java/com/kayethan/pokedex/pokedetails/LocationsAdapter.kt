@@ -27,7 +27,15 @@ class LocationsAdapter(private val locations: List<GameLocation>) : RecyclerView
     override fun onBindViewHolder(holder: LocationViewHolder, position: Int) {
         val location = locations[position]
         holder.locationNameTextView.text = location.route.getString(context)
-        holder.locationLvlTextView.text = context.getString(R.string.location_lvl_range, location.levelRange.first, location.levelRange.last)
+
+        if (location.levelRange.first == location.levelRange.last)
+        {
+            holder.locationLvlTextView.text = location.levelRange.last.toString()
+        }
+        else
+        {
+            holder.locationLvlTextView.text = context.getString(R.string.location_lvl_range, location.levelRange.first, location.levelRange.last)
+        }
     }
 
     override fun getItemCount(): Int {

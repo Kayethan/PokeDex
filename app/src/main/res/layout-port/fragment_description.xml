@@ -103,7 +103,7 @@
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/detailsHeightLabelTV"
-                    app:layout_constraintTop_toBottomOf="@+id/detailsType2TV" />
+                    app:layout_constraintTop_toBottomOf="@+id/detailsType1TV" />
 
                 <TextView
                     android:id="@+id/detailsWeightLabelTV"
